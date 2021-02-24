@@ -1,4 +1,4 @@
-# Auth0 ♥️ Angular Workshop Code
+# Auth0 ♥️ Angular
 
 ## Workshop Overview
 This workshop will follow 8 steps:
