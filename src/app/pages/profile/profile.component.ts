@@ -1,3 +1,4 @@
+import { AuthService } from '@auth0/auth0-angular';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,7 +6,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './profile.component.html',
 })
 export class ProfileComponent implements OnInit {
-  constructor() {}
+  
+  profileInfo: string = null;
 
-  ngOnInit(): void {}
+  constructor(public auth: AuthService) {}
+
+  ngOnInit(): void {
+    this.auth.user$.subscribe( 
+      (profile) => (this.profileInfo = JSON.stringify(profile, null, 2))
+     )
+  }
 }

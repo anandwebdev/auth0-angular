@@ -1,8 +1,10 @@
 <div class="nav-container mb-3">
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <div class="container">
-      <div class="navbar-brand logo"></div>
-      <app-main-nav></app-main-nav>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container">
+            <div class="navbar-brand logo"></div>
+            <app-main-nav></app-main-nav>
+            <app-login *ngIf="(auth.isAuthenticated$  | async) === false"></app-login>
+            <app-logout *ngIf="auth.isAuthenticated$  | async"></app-logout>
+        </div>
+    </nav>
 </div>
